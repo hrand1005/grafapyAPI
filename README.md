@@ -6,8 +6,8 @@ Grafapy is a python-grafana API that specializes in creating dashboards with myr
 
 For example, this...
 ```python
-host="nutmeg"                               #host and item names defined according to
-item="Processor Load (1 min average)"       #their configuration in zabbix
+host="nutmeg"                                        #host and item names defined according to
+item="Processor Load (1 min average per core)"       #their configuration in zabbix
 q = Query(host, item)
 p = GraphPanel(title='MyPanel', queryArray=[q])
 d = DashBoard(title='MyDash', token=token)
