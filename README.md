@@ -6,4 +6,8 @@ Grafapy is a python-grafana API that specializes in creating dashboards with myr
 For example:
 ```python
 q = Query(host, item)
+p = GraphPanel(title='MyPanel', queryArray=[q])
+d = DashBoard(title='MyDash', token=token)
+d.addPanels([p])
+d.push()
 ```
