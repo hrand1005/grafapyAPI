@@ -16,4 +16,4 @@ d.push()
 ```
 produces this...
 
-![alt text](https://raw.githubusercontent.com/hrand1005/grafapyAPI/master/Screenshot_2019-07-22_13-59-45.png "MyDash")
+![alt text]("MyDash")
