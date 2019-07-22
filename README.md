@@ -15,5 +15,5 @@ d.addPanels([p])
 d.push()
 ```
 produces this...
-Inline-style: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
+![alt text](https://raw.githubusercontent.com/hrand1005/grafapyAPI/master/Screenshot_2019-07-22_13-59-45.png "MyDash")
