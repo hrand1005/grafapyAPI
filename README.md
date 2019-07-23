@@ -20,7 +20,9 @@ produces this...
 
 # Supported Panel Types
 -Graph Panel
+
 -Single Stat Panel
+
 -Math Panel (Singlestat)
 
 # When should I use it?
