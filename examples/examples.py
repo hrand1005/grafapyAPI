@@ -79,7 +79,7 @@ def example3(token):
   This example introduces singlestat panels, which can be heavily customized.
   """
   #create a new dashboard object, and set panelsPerRow equal to 12, and panelHeight equal to 4
-  d = DashBoard(title="Example 3", token=token, panelsPerRow=8, panelHeight=4)
+  d = DashBoard(title="Example 3", token=token, panelsPerRow=10, panelHeight=4)
 
   #let's make this dashboard with multiple hosts
   hosts = ["abra", "charmander", "meowth", "jigglypuff", "ponyta", "psyduck", "pikachu", "zubat", "beedrill", "bulbasaur"]
