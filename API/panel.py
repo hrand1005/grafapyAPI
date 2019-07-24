@@ -251,7 +251,8 @@ class SingleStatPanel(Panel):
         singleStatDictionary = self._readJSON("singlestat.json")
         singleStatDictionary["title"] = self.title
         singleStatDictionary["valueFontSize"] = fontSize
-        singleStatDictionary["links"] = self.links
+        if self.links!=None:
+          singleStatDictionary["links"] = self.links
         print(sparkline, type(sparkline))
         if sparkline:
             singleStatDictionary["sparkline"]["show"] = True
