@@ -16,7 +16,7 @@ d.push()
 ```
 produces this...
 
-![alt text](https://raw.githubusercontent.com/hrand1005/grafapyAPI/master/MyDash.png "MyDash")
+![alt text](https://raw.githubusercontent.com/hrand1005/grafapyAPI/master/pictures/MyDash.png "MyDash")
 
 # Supported Panel Types
 -Graph Panel
