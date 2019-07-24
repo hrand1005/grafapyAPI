@@ -1,3 +1,5 @@
+The following are example uses of grafapy. See examples.py for step by step descriptions of the code
+
 # Example 1
 
 Code:
