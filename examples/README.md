@@ -19,6 +19,7 @@ def example1(token):
 
 Grafana:
 ![alt text](https://raw.githubusercontent.com/hrand1005/grafapyAPI/master/pictures/Example1.png "Example1")
+Note: the above panel is one half the length of a grafana dashboard (panelsPerRow dashboard parameter defaults to 2)
 
 # Example 2
 
