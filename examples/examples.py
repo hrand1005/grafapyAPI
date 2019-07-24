@@ -74,10 +74,45 @@ def example2(token):
     d.addPanels(panels)
     d.push()
 
+def example3(token):
+  """
+  This example introduces singlestat panels, which can be heavily customized.
+  """
+  #create a new dashboard object, and set panelsPerRow equal to 12, and panelHeight equal to 4
+  d = DashBoard(title="Example 3", token=token, panelsPerRow=8, panelHeight=4)
+
+  #let's make this dashboard with multiple hosts
+  hosts = ["abra", "charmander", "meowth", "jigglypuff", "ponyta", "psyduck", "pikachu", "zubat", "beedrill", "bulbasaur"]
+
+  #singlestat can only display one query
+  item = "Number of logged in users"
+
+  #declare a list to store your panels
+  panels = []
+
+  #declare a list of colors that will represent different states of your hosts
+  colors = ["green", "yellow", "red"]
+
+  #declare a threshold string that you want to correspond to your colors. in this case, 0 logged on users is green,
+  #1-3 is yellow, and 4 or above is red
+  threshold = "1, 4"
+
+  for host in hosts:
+    q = Query(host, item)
+
+    #set colors and thresholds equal to our declared variables, and colorBackground to True
+    p = SingleStatPanel(title=host, queryArray=[q], colors=colors, thresholds=threshold, colorBackground=True)
+    panels.append(p)
+
+  #add panels to your dashboard, and push
+  d.addPanels(panels)
+  d.push()
+
 def main():
     grafAuth = os.environ["HOME"] + "/grafanaToken"
     token, URL = getCredentials(grafAuth)
     example1(token)
     example2(token)
+    example3(token)
 main()
 
