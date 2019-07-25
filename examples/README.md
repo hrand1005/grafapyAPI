@@ -46,3 +46,29 @@ def example2(token):
 
 Grafana:
 ![alt text](https://raw.githubusercontent.com/hrand1005/grafapyAPI/master/pictures/Example2.png "Example2")
+
+# Example 3
+
+Code:
+```python
+def example3(token):
+   d = DashBoard(title="Example 3", token=token, panelsPerRow=5, panelHeight=8)
+
+   hosts = ["abra", "charmander", "meowth", "jigglypuff", "ponyta", "psyduck", "pikachu", "zubat", "beedrill", "bulbasaur"]
+   item = "Number of logged in users"
+   panels = []
+   colors = ["green", "yellow", "red"]
+   threshold = "1, 4"
+
+   for host in hosts:
+      q = Query(host, item)
+      panelTitle = host + " users"
+      p = SingleStatPanel(title=panelTitle, queryArray=[q], colors=colors, thresholds=threshold, colorBackground=True)
+      panels.append(p)
+
+   d.addPanels(panels)
+   d.push()
+```
+
+Grafana:
+![alt text](https://raw.githubusercontent.com/hrand1005/grafapyAPI/master/pictures/singleStat.png "Example3")
