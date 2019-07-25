@@ -1,0 +1,69 @@
+{
+ "cacheTimeout": null,
+ "colorBackground": true,
+ "colorValue": false,
+ "colors": [
+     "#C4162A",
+     "#56A64B",
+     "#27872D"
+     ],
+ "format": "none",
+ "guage": {
+     "maxValue": 100,
+     "minValue": 0,
+     "show": false,
+     "thresholdLabels": false,
+     "thresholdMarkers": true
+     },
+ "gridPos": {
+     "h": 8,
+     "w": 12,
+     "x": 0,
+     "y": 0
+     },
+ "id": 2,
+ "interval": null,
+ "links": [],
+ "mappingType": 1,
+ "mappingTypes": [
+     {
+         "name": "value to text",
+         "value": 1
+         },
+     {
+         "name": "range to text",
+         "value": 2
+         }
+     ],
+ "maxDataPoints": 100,
+ "nullPointMode": "connected",
+ "nullText": null,
+ "options": {},
+ "postfix": "",
+ "postfixFontSize": "50%",
+ "prefix": "",
+ "prefixFontSize": "50%",
+ "rangeMaps": [
+     {
+         "from": "null",
+         "text": "N/A",
+         "to": "null"
+         }
+     ],
+ "sparkline": {
+         "fillColor": "rgb(108, 137, 189)",
+         "full": false,
+         "lineColor": "rgb(0, 7, 13)",
+         "show": false
+         },
+ "tableColumn": "",
+ "targets": [],
+ "thresholds": "0",
+ "timeFrom": null,
+ "timeShift": null,
+ "title": "panel title",
+ "type": "singlestat",
+ "valueFontSize": "100%",
+ "valueMaps": [],
+ "valueName": "current"
+}

@@ -61,6 +61,14 @@ class Panel:
                 self.links=None
             if queryArray!=None:
                 self.queries.extend(queryArray)
+
+    def _readJSON(self, filename):
+        """read json from file, return as dict"""
+        jPanel = open(filename)
+        panelStr = jPanel.read()
+        jPanel.close()
+        d = json.loads(panelStr)
+        return d
     
     def getDictionary(self):
         """
@@ -235,11 +243,11 @@ class SingleStatPanel(Panel):
                 Example: absLink=<another dashboard's URL>
             See singleStat panel examples for details.
         """
-        print("ssp title: ", title)
-        print("ssp units: ", units)
-        print("ssp sparkline: ", sparkline)
-        print("ssp JSON: ", JSON)
-        print("ssp fs: ", fontSize)
+#        print("ssp title: ", title)
+#        print("ssp units: ", units)
+#        print("ssp sparkline: ", sparkline)
+#        print("ssp JSON: ", JSON)
+#        print("ssp fs: ", fontSize)
         Panel.__init__(self, "singlestat", title=title, queryArray=queryArray, JSON=JSON, absLink=absLink)
         if JSON==None:
             self._buildDictionary(valueMaps, rangeMaps, fontSize, colors, thresholds, units, decimals, sparkline, colorValue, colorBackground)
@@ -252,7 +260,7 @@ class SingleStatPanel(Panel):
         singleStatDictionary["title"] = self.title
         singleStatDictionary["valueFontSize"] = fontSize
         if self.links!=None:
-          singleStatDictionary["links"] = self.links
+            singleStatDictionary["links"] = self.links
         print(sparkline, type(sparkline))
         if sparkline:
             singleStatDictionary["sparkline"]["show"] = True
@@ -272,9 +280,6 @@ class SingleStatPanel(Panel):
             singleStatDictionary["rangeMaps"]=rangeMaps
         if colors!=None:
             colorArray = []
-#           if len(colors)>3:
-#               print("Too many colors in your array! Pick three, and try again.")
-#               #raise exception here
             for color in colors:
                 colorArray.append(colorDictionary[color])
             singleStatDictionary["colors"] = colorArray
@@ -293,14 +298,6 @@ class SingleStatPanel(Panel):
             self.addQueries(self.queries)
         self.id = 0
         self.position = [0,0]
-
-    def _readJSON(self, filename):
-        """read json from file, return as dict"""
-        jPanel = open(filename)
-        panelStr = jPanel.read()
-        jPanel.close()
-        d = json.loads(panelStr)
-        return d
     
     def addValueMap(self, valueMaps):
         """
@@ -381,84 +378,11 @@ class GraphPanel(Panel):
         """
         Description: to be called by constructor, builds graph dictionary
         """
-        graphDictionary = {
-                            "aliasColors":{},
-                            "bars": False,
-                            "dashLength": 10,
-                            "dashes": False,
-                            "fill": 1,
-                            "gridPos": {
-                                "h": 8,
-                                "w": 12,
-                                "x": 0,
-                                "y": 0
-                                },
-                            "id": 0,
-                            "legend": {
-                                "avg": False,
-                                "current": False,
-                                "max": False,
-                                "min": False,
-                                "show": True,
-                                "total": False,
-                                "values": False
-                                },
-                            "lines": True,
-                            "linewidth": 1,
-                            "links": self.links,
-                            "maxDataPoints": "100",
-                            "nullPointMode": "null",
-                            "options": {},
-                            "percentage": False,
-                            "pointradius": 2,
-                            "points": False,
-                            "renderer": "flot",
-                            "seriesOverrides": [],
-                            "spaceLength": 10,
-                            "stack": False,
-                            "steppedLine": False,
-                            "targets": [],
-                            "thresholds": [],
-                            "timeFrom": None,
-                            "timeRegions": [],
-                            "timeShift": None,
-                            "title": self.title,
-                            "tooltip": {
-                                "shared": True,
-                                "sort": 0,
-                                "value_type": "individual"
-                                },
-                            "type": "graph",
-                            "xaxis": {
-                                "buckets": None,
-                                "mode": "time",
-                                "name": None,
-                                "show": True,
-                                "values": []
-                                },
-                            "yaxes": [
-                                    {
-                                        "format": "short",
-                                        "label": None,
-                                        "logBase": 1,
-                                        "max": None,
-                                        "min": None,
-                                        "show": True
-                                        },
-                                    {
-                                        "format": "short",
-                                        "label": None,
-                                        "logBase": 1,
-                                        "max": None,
-                                        "min": None,
-                                        "show": True
-                                        }
-                                    ],
-                            "yaxis": {
-                                    "align": False,
-                                    "alignLevel": None
-                                    }
-		    	    }
+
+        graphDictionary = self._readJSON("graphpanel.json")
+        graphDictionary["title"] = self.title
+        if self.links!=None:
+            graphDictionary["links"] = self.links
         if units != None:
             graphDictionary["yaxes"][0]["format"] = units
             graphDictionary["yaxes"][1]["format"] = units
