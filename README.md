@@ -1,6 +1,9 @@
 # grafapyAPI
 Python API for creating Grafana Dashboards using Zabbix as a datasource.
 
+# Version 0.1, Getting Started
+Everything you need to use grafapy can be found in the API directory. Simply change the postURL in dashboard.py to match your own, and you're ready to start creating your own dashboards.
+
 # What is it?
 Grafapy is a python-grafana API that specializes in creating dashboards with myriad panels of a single size. The API allows a user to configure grafana pages using dashboard, panel, and query objects instead of working with a JSON.
 
