@@ -72,3 +72,44 @@ def example3(token):
 
 Grafana:
 ![alt text](https://raw.githubusercontent.com/hrand1005/grafapyAPI/master/pictures/singleStat.png "Example3")
+
+# Example 4
+
+Code:
+```python
+def example4(token):                                                                                                                                                                                                          [11/1838]
+    d = DashBoard(title="Example 4", token=token, panelsPerRow=8, panelHeight=6)                                                                                                                                                       
+
+    hosts = ["almond", "celery", "cabbage", "butter", "hyssop", "dill", "egg", "thyme", "coriander", "coconut", "cornstarch", "marjoram", "mace", "onion", "mustard", "parsley", "pepper", "sage", "milk", "honey", "poppy", "sesame",
+"spinach", "lime", "licorice", "olive", "rosemary", "saffron"]
+
+    item1 = "System uptime"
+    item2 = "ICMP ping"
+    panels = []
+    colors = ["grey", "red", "yellow", "green"]
+    threshold = "1, 1800, 172800"
+    units = "s"
+    decimals = 1
+    math = "uptime*ping"
+    link = "http://blade.cs.swarthmore.edu/grafana/d/3AcvQxVWk/any-single-machine-status?orgId=1&refresh=1m&var-Group=Linux%20servers&var-Host="
+
+    hosts.sort()
+
+    for host in hosts:
+        q1 = Query(host, item1, alias="uptime")
+        q2 = Query(host, item2, alias="ping")
+        panelTitle = host + " uptime"
+        absLink = link + host
+        p = MathStatPanel(title=panelTitle, queryArray=[q1, q2], colors=colors, thresholds=threshold, units=units, decimals=decimals, math=math, colorBackground=True, absLink=absLink)
+        panels.append(p)
+
+    d.addPanels(panels)
+    d.push()
+```
+
+Grafana:
+![alt text](https://raw.githubusercontent.com/hrand1005/grafapyAPI/master/pictures/mathStat.png "Example4")
+
+Notice the icons in the top right corners of the panels. If you hover over them, you can use the absolute link. In our case, thyme links to the following:
+
+![alt text](https://raw.githubusercontent.com/hrand1005/grafapyAPI/master/pictures/thyme.png "thyme")
