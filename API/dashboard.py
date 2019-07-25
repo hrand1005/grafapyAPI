@@ -250,7 +250,7 @@ class DashBoard:
             the same uid, it will be overwritten
         """
         self.dictionary["overwrite"] = True
-        postURL = "http://localhost:3000/api/dashboards/db"
+        postURL = "Your postURL here!"
         response = requests.post(postURL, headers=self.headers, json=self.dictionary)
         if(response.status_code!=200):
             raise Exception("DashBoard could not be posted to %s. Status code: %s" % (postURL, response.status_code))
