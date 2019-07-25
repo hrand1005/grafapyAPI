@@ -110,6 +110,6 @@ def example4(token):                                                            
 Grafana:
 ![alt text](https://raw.githubusercontent.com/hrand1005/grafapyAPI/master/pictures/mathStat.png "Example4")
 
-Notice the icons in the top right corners of the panels. If you hover over them, you can use the absolute link. In our case, thyme links to the following:
+Notice the icons in the top right corners of the panels. If you hover over them, you can use the absolute link. In our case, thyme links to the following custom dashboard:
 
 ![alt text](https://raw.githubusercontent.com/hrand1005/grafapyAPI/master/pictures/thyme.png "thyme")
