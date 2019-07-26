@@ -32,5 +32,6 @@ produces this...
 Grafana already provides templating that allows users to view various stats for selected hosts and host groups. But what if you want to check which of your machines are up? A glance at each machine's CPU Load? A quick look at each machine's network traffic? These types of checks are invaluable for catching irregularities in your network, and this is where grafapy shines. 
 
 ![alt text](https://raw.githubusercontent.com/hrand1005/grafapyAPI/master/pictures/gpuOverview.png "GPU Overview")
+![alt text](https://raw.githubusercontent.com/hrand1005/grafapyAPI/master/pictures/cpuLoads.png "CPU Loads")
 
 See 'examples' for example uses of grafapy.
