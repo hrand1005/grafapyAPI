@@ -109,7 +109,7 @@ def example3(token):
     d.addPanels(panels)
     d.push()
 
-def example4(token):
+def example4(token, URL):
     """
     This example introduces mathpanels, a subclass of singlestat panels, and absolute links.
     While it might seem appropriate to just use a singleStat panel in this case, our zabbix item
@@ -151,7 +151,7 @@ def example4(token):
     #perhaps we'll want to see details about our hosts individually by clicking on them. this can be accomplished by creating an absolute link to another dashboard
     #we'll link our hosts to one of our templated dashboards that shows various stats about a single machine, and when we iterate through our hosts, we'll tweak the 
     #link so that each host links to their own individual dashboard
-    link = "http://blade.cs.swarthmore.edu/grafana/d/3AcvQxVWk/any-single-machine-status?orgId=1&refresh=1m&var-Group=Linux%20servers&var-Host="
+    link = URL + "grafana/d/3AcvQxVWk/any-single-machine-status?orgId=1&refresh=1m&var-Group=Linux%20servers&var-Host="
 
     #let's sort our hosts so that our dashboard shows them in alphabetical order
     hosts.sort()
@@ -176,6 +176,6 @@ def main():
     example1(token)
     example2(token)
     example3(token)
-    example4(token)
+    example4(token, URL)
 main()
 
