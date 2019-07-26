@@ -33,4 +33,4 @@ Grafana already provides templating that allows users to view various stats for 
 
 ![alt text](https://raw.githubusercontent.com/hrand1005/grafapyAPI/master/pictures/cpuLoads.png "CPU Loads")
 
-See 'examples' for example uses of grafapy.
+See [examples](https://github.com/hrand1005/grafapyAPI/tree/master/examples) for example uses of grafapy.
