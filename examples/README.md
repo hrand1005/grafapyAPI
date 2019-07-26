@@ -1,5 +1,13 @@
 The following are example uses of grafapy. See [examples.py](https://github.com/hrand1005/grafapyAPI/blob/master/examples/examples.py) for step by step descriptions of the code. Full documentation of objects/methods can be found in our [wiki](https://github.com/hrand1005/grafapyAPI/wiki).
 
+### grafAuth
+Our examples.py script reads in a [token and url](https://github.com/hrand1005/grafapyAPI/blob/ada917aa9e656fc327c6b473d65172e9f44b6c37/examples/examples.py#L174) from a file in the user's home directory formatted as follows:
+```python
+<token>
+<URL>
+```
+You can run our examples.py script by creating such a file in your own home directory, or modifying the script to include your token and url via other means. More on Grafana tokens [here](https://grafana.com/docs/tutorials/api_org_token_howto/).
+
 # Example 1
 
 Code:
