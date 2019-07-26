@@ -33,5 +33,6 @@ Grafana already provides templating that allows users to view various stats for 
 
 ![alt text](https://raw.githubusercontent.com/hrand1005/grafapyAPI/master/pictures/gpuOverview.png "GPU Overview")
 ![alt text](https://raw.githubusercontent.com/hrand1005/grafapyAPI/master/pictures/cpuLoads.png "CPU Loads")
+![alt text](https://raw.githubusercontent.com/hrand1005/grafapyAPI/master/pictures/systemUptimes.png "System uptimes")
 
 See 'examples' for example uses of grafapy.
