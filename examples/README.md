@@ -99,7 +99,7 @@ def example4(token):                                                            
     units = "s"
     decimals = 1
     math = "uptime*ping"
-    link = "http://blade.cs.swarthmore.edu/grafana/d/3AcvQxVWk/any-single-machine-status?orgId=1&refresh=1m&var-Group=Linux%20servers&var-Host="
+    link = URL + "grafana/d/3AcvQxVWk/any-single-machine-status?orgId=1&refresh=1m&var-Group=Linux%20servers&var-Host="
 
     hosts.sort()
 
