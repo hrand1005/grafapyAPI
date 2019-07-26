@@ -25,11 +25,11 @@ produces this...
 ![alt text](https://raw.githubusercontent.com/hrand1005/grafapyAPI/master/pictures/MyDash.png "MyDash")
 
 # Supported Panel Types
--Graph Panel
++[Graph Panel](https://github.com/hrand1005/grafapyAPI/wiki/Panels#graphpanels)
 
--Single Stat Panel
++Single Stat Panel
 
--Math Panel (Singlestat)
++Math Panel (Singlestat)
 
 # When should I use it?
 Grafana already provides templating that allows users to view various stats for selected hosts and host groups. But what if you want to check which of your machines are up? A glance at each machine's CPU Load? A quick look at each machine's network traffic? These types of checks are invaluable for catching irregularities in your network, and this is where grafapy shines. 
