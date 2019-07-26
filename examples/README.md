@@ -1,4 +1,4 @@
-The following are example uses of grafapy. See [examples.py](https://github.com/hrand1005/grafapyAPI/blob/master/examples/examples.py) for step by step descriptions of the code
+The following are example uses of grafapy. See [examples.py](https://github.com/hrand1005/grafapyAPI/blob/master/examples/examples.py) for step by step descriptions of the code. Full documentation of objects/methods can be found in our [wiki](https://github.com/hrand1005/grafapyAPI/wiki).
 
 # Example 1
 
