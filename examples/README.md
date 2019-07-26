@@ -85,7 +85,7 @@ Grafana:
 
 Code:
 ```python
-def example4(token):                                                                                                                                                                                                          [11/1838]
+def example4(token, URL):                                                                                                                                                                                                          [11/1838]
     d = DashBoard(title="Example 4", token=token, panelsPerRow=8, panelHeight=6)                                                                                                                                                       
 
     hosts = ["almond", "celery", "cabbage", "butter", "hyssop", "dill", "egg", "thyme", "coriander", "coconut", "cornstarch", "marjoram", "mace", "onion", "mustard", "parsley", "pepper", "sage", "milk", "honey", "poppy", "sesame",
