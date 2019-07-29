@@ -6,7 +6,7 @@ Our examples.py script reads in a [token and url](https://github.com/hrand1005/g
 <token>
 <URL>
 ```
-You can run our examples.py script by creating such a file in your own home directory, or modifying the script to include your token and url via other means. More on Grafana tokens [here](https://grafana.com/docs/tutorials/api_org_token_howto/).
+You can run our examples.py script by creating a 'grafAuth' file in your own home directory, or modifying the script to include your token and url via other means. More on Grafana tokens [here](https://grafana.com/docs/tutorials/api_org_token_howto/).
 
 # Example 1
 
