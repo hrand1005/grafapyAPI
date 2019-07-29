@@ -18,7 +18,7 @@ q = Query(host, item)
 p = GraphPanel(title='MyPanel', queryArray=[q])
 d = DashBoard(title='MyDash', token=token)
 d.addPanels([p])
-d.push()
+d.push(postURL="http://localhost:3000/api/dashboards/db")
 ```
 produces this...
 
