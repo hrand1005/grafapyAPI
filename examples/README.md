@@ -22,7 +22,7 @@ def example1(token):
    q = Query(host, item)
    p = GraphPanel(title=panelTitle, queryArray=[q])
    d.addPanels([p])
-   d.push()
+   d.push(postURL="http://localhost:3000/api/dashboards/db")
 ```
 
 Grafana:
@@ -34,7 +34,7 @@ Note: the above panel is one half the length of a grafana dashboard (panelsPerRo
 Code:
 ```python
 def example2(token):
-   d = DashBoard(title="Example 2", token=token, panelsPerRow=3)
+   d = DashBoard(title="Example 2", url="http://localhost:3000/api/dashboards/db", token=token, panelsPerRow=3)
    
    hosts = ["nutmeg", "mustard", "tomato", "basil", "cheese", "lime", "flour", "cream", "mace"]
    item1 = "Incoming network traffic on eth0"
@@ -60,7 +60,7 @@ Grafana:
 Code:
 ```python
 def example3(token):
-   d = DashBoard(title="Example 3", token=token, panelsPerRow=5, panelHeight=8)
+   d = DashBoard(title="Example 3", token=token, url="http://localhost:3000/api/dashboards/db", panelsPerRow=5, panelHeight=8)
 
    hosts = ["abra", "charmander", "meowth", "jigglypuff", "ponyta", "psyduck", "pikachu", "zubat", "beedrill", "bulbasaur"]
    item = "Number of logged in users"
@@ -86,7 +86,7 @@ Grafana:
 Code:
 ```python
 def example4(token, URL):                                                                                                                                                                                                          [11/1838]
-    d = DashBoard(title="Example 4", token=token, panelsPerRow=8, panelHeight=6)                                                                                                                                                       
+    d = DashBoard(title="Example 4", token=token, url="http://localhost:3000/api/dashboards/db", panelsPerRow=8, panelHeight=6)                                                                                                                                                       
 
     hosts = ["almond", "celery", "cabbage", "butter", "hyssop", "dill", "egg", "thyme", "coriander", "coconut", "cornstarch", "marjoram", "mace", "onion", "mustard", "parsley", "pepper", "sage", "milk", "honey", "poppy", "sesame",
 "spinach", "lime", "licorice", "olive", "rosemary", "saffron"]
