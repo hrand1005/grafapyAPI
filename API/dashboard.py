@@ -251,6 +251,8 @@ class DashBoard:
         """
         if postURL==None:
             postURL=self.URL
+        if postURL==None:
+            raise Exception("No postURL set! Either provide a url in the constructor or set postURL=<url> in this method.")
         self.dictionary["overwrite"] = True
         response = requests.post(postURL, headers=self.headers, json=self.dictionary)
         if(response.status_code!=200):
