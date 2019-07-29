@@ -15,7 +15,6 @@ import sys
 colorDictionary = {"red":"#C4162A", "blue":"#1F60C4", "green":"#37872D", "yellow":"#E0B400", "orange":"#FA6400", "purple":"#440563", "baby blue":"#8AB8FF", "grey":"#757575"}
 
 class Panel:
-    #support json for this constructor?
     def __init__(self, panelType, title="title", queryArray=None, JSON=None, absLink=None):
         """
         Parameters: panelType (required), optional title and queryArray. If json found,
