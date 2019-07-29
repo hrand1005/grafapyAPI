@@ -40,14 +40,14 @@ def example1(token):
 
     #simply add your created panel to your dashboard, and push it to grafana!
     d.addPanels([p])
-    d.push()
+    d.push(postURL="http://localhost:3000/api/dashboards/db")
 
 def example2(token):
     """
     This example improves on example 1 by exploring more features of the GraphPanel and DashBoard objects
     """
     #create a new dashboard object, and set panelsPerRow equal to 3
-    d = DashBoard(title="Example 2", token=token, panelsPerRow=3)
+    d = DashBoard(title="Example 2", token=token, url="http://localhost:3000/api/dashboards/db", panelsPerRow=3)
 
     #let's make a dashboard with multiple hosts
     hosts = ["nutmeg", "mustard", "tomato", "basil", "cheese", "lime", "flour", "cream", "mace"]
@@ -107,7 +107,7 @@ def example3(token):
 
   #add panels to your dashboard, and push
   d.addPanels(panels)
-  d.push()
+  d.push(postURL="http://localhost:3000/api/dashboards/db")
 
 def main():
     grafAuth = os.environ["HOME"] + "/grafanaToken"

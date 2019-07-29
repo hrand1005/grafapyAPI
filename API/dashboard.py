@@ -244,11 +244,13 @@ class DashBoard:
         dbString += "\npanels per row: %s\npanel height: %s" % (self.panelsPerRow, self.panelHeight)
         return dbString
 
-    def push(self, postURL=self.URL):
+    def push(self, postURL=None):
         """
         Description: pushes the dashboard object to grafana, if there is an existing dashboard with 
             the same uid, it will be overwritten
         """
+        if postURL==None:
+            postURL=self.URL
         self.dictionary["overwrite"] = True
         response = requests.post(postURL, headers=self.headers, json=self.dictionary)
         if(response.status_code!=200):
