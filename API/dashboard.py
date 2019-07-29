@@ -59,11 +59,11 @@ class DashBoard:
         if (self.URL==None):
             raise Exception("You must set url to initialize DashBoard with UID.")
 
-        self.URL = self.URL + self.uid 
-        dashObj = requests.get(self.URL, headers=self.headers)
+        urlPlusUID = self.URL + self.uid 
+        dashObj = requests.get(urlPlusUID, headers=self.headers)
 
         if dashObj.status_code!=200:
-            raise Exception("Dashboard not found. \nStatus code %s \nURL: %s " % (dashObj.status_code,self.URL))
+            raise Exception("Dashboard not found. \nStatus code %s \nURL: %s " % (dashObj.status_code,urlPlusUID))
         self._importJSON(dashObj.text)
     
     def _importJSON(self, dashObj):
@@ -244,13 +244,12 @@ class DashBoard:
         dbString += "\npanels per row: %s\npanel height: %s" % (self.panelsPerRow, self.panelHeight)
         return dbString
 
-    def push(self):
+    def push(self, postURL=self.URL):
         """
         Description: pushes the dashboard object to grafana, if there is an existing dashboard with 
             the same uid, it will be overwritten
         """
         self.dictionary["overwrite"] = True
-        postURL = "Your postURL here!"
         response = requests.post(postURL, headers=self.headers, json=self.dictionary)
         if(response.status_code!=200):
             raise Exception("DashBoard could not be posted to %s. Status code: %s" % (postURL, response.status_code))
