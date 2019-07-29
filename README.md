@@ -4,7 +4,7 @@ Python API for creating Grafana Dashboards using Zabbix as a datasource.
 + [examples](https://github.com/hrand1005/grafapyAPI/tree/master/examples)
 + [documentation (wiki)](https://github.com/hrand1005/grafapyAPI/wiki)
 
-# Version 0.1, Getting Started
+# Version 0.0.1, Getting Started
 Everything you need to use grafapy can be found in the API directory. Simply change the postURL in [dashboard.py's push() method](https://github.com/hrand1005/grafapyAPI/blob/66ea9d6539e7cd76cb7ced26bb64b8a1df9408f3/API/dashboard.py#L253) to match your own post location, and you're ready to start creating your own dashboards.
 
 # What is it?
