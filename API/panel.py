@@ -107,7 +107,7 @@ class Panel:
         """
         return self.id
 
-    def setPosition(self, x, y):
+    def _setPosition(self, x, y):
         """
         Parameters: x and y value to set panel position in dashboard
         """
@@ -127,7 +127,7 @@ class Panel:
         """
         return self.size
 
-    def setSize(self, h, w):
+    def _setSize(self, h, w):
         """
         Parameters: height and width
         """
@@ -140,7 +140,7 @@ class Panel:
             print("The size on this panel has already been set.")
             print("Height: %s, Width: %s" % (self.size[0], self.size[1]))
 
-    def sizeSet(self):
+    def _sizeSet(self):
         """
         Returns: bool indicating whether the size has been set on this panel.
         """
@@ -236,7 +236,7 @@ class SingleStatPanel(Panel):
                 Example: sparkline=True
             colorValue: bool, set to True if you want the value in your singleStat panel to change color in accordance with your colors list and threshold arguments.
                 Example: colorValue=True
-            colorValue: bool, set to True if you want the background in your singleStat panel to change color in accordance with your colors list and threshold arguments. NOTE: if you set both colorValue and colorBackground to True, you won't be able to see the value! (The whole panel will be one color!)
+            colorBackground: bool, set to True if you want the background in your singleStat panel to change color in accordance with your colors list and threshold arguments. NOTE: if you set both colorValue and colorBackground to True, you won't be able to see the value! (The whole panel will be one color!)
                 Example: colorBackground=True
             absLink: absolute link, a url to be redirected to upon clicking on the panel.
                 Example: absLink=<another dashboard's URL>

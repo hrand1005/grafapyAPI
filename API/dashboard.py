@@ -118,14 +118,14 @@ class DashBoard:
         """
         for i in range(len(panelArray)):
             panelArray[i].setID(i+startID)
-            panelArray[i].setSize(self.panelHeight, 24/self.panelsPerRow)
+            panelArray[i]._setSize(self.panelHeight, 24/self.panelsPerRow)
             if (i+startID)-self.panelsPerRow<0:
                 x = (i+startID)*(24/self.panelsPerRow)
                 y = 0
             else:
                 x = ((i+startID)%(self.panelsPerRow))*(24/self.panelsPerRow)
                 y = (i+startID)/self.panelsPerRow * self.panelHeight
-            panelArray[i].setPosition(x, y)
+            panelArray[i]._setPosition(x, y)
         return panelArray
 
     def getPanels(self):

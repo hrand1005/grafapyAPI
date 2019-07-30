@@ -152,6 +152,23 @@ def example4(token, URL):
     #variable names, so we'll have to set the aliases to 'uptime' and 'ping' in the query constructor
     math = "uptime*ping"
 
+    #value map?
+    valueMap=  [{
+                  "op": "=",
+                  "text": "Down :(",
+                  "value": "null"
+                },
+                {
+                  "op": "=",
+                  "text": "Down :(",
+                  "value": "0"
+                },
+                {
+                  "op": "=",
+                  "text": "Up :)",
+                  "value": "1"
+                }]
+
     #perhaps we'll want to see details about our hosts individually by clicking on them. this can be accomplished by creating an absolute link to another dashboard
     #we'll link our hosts to one of our templated dashboards that shows various stats about a single machine, and when we iterate through our hosts, we'll tweak the 
     #link so that each host links to their own individual dashboard
@@ -167,7 +184,7 @@ def example4(token, URL):
 
         panelTitle = host + " uptime"
         absLink = link + host
-        p = MathStatPanel(title=panelTitle, queryArray=[q1, q2], colors=colors, thresholds=threshold, units=units, decimals=decimals, math=math, colorBackground=True, absLink=absLink)
+        p = MathStatPanel(title=panelTitle, queryArray=[q1, q2], colors=colors, thresholds=threshold, valueMaps=valueMap, units=units, decimals=decimals, math=math, colorBackground=True, absLink=absLink)
         panels.append(p)
 
     #add panels to your dashboard, and push
