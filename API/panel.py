@@ -212,7 +212,7 @@ class Panel:
 class SingleStatPanel(Panel):
 
     def __init__(self, title="title", queryArray=None, valueMaps=None, rangeMaps=None, 
-            fontSize="100%", colors=None, thresholds=None, units=None, JSON=None, 
+            fontSize="100%", prefix=None, postfix=None, colors=None, thresholds=None, units=None, JSON=None, 
             decimals=None, sparkline=None, colorBackground=None, colorValue=None, absLink=None):
         """
         Parameters: optional title and queryArray, title is 'title' by default, 
@@ -249,9 +249,9 @@ class SingleStatPanel(Panel):
 #        print("ssp fs: ", fontSize)
         Panel.__init__(self, "singlestat", title=title, queryArray=queryArray, JSON=JSON, absLink=absLink)
         if JSON==None:
-            self._buildDictionary(valueMaps, rangeMaps, fontSize, colors, thresholds, units, decimals, sparkline, colorValue, colorBackground)
+            self._buildDictionary(valueMaps, rangeMaps, fontSize, prefix, postfix, colors, thresholds, units, decimals, sparkline, colorValue, colorBackground)
 
-    def _buildDictionary(self, valueMaps, rangeMaps, fontSize, colors, thresholds, units, decimals, sparkline, colorValue, colorBackground):
+    def _buildDictionary(self, valueMaps, rangeMaps, fontSize, prefix, postfix, colors, thresholds, units, decimals, sparkline, colorValue, colorBackground):
         """
         Description: to be called by constructor, builds singlestat panel dictionary
         """
@@ -277,6 +277,10 @@ class SingleStatPanel(Panel):
             #same as above
             singleStatDictionary["mappingType"]=2
             singleStatDictionary["rangeMaps"]=rangeMaps
+        if prefix!=None:
+            singleStatDictionary["prefix"]=prefix
+        if postfix!=None:
+            singleStatDictionary["postfix"]=postfix
         if colors!=None:
             colorArray = []
             for color in colors:
@@ -309,7 +313,7 @@ class SingleStatPanel(Panel):
 class MathStatPanel(SingleStatPanel):
 
     def __init__(self, title="title", queryArray=None, valueMaps=None, rangeMaps=None,
-            fontSize="100%", colors=None, thresholds=None, units=None, JSON=None,
+            fontSize="100%", prefix=None, postfix=None, colors=None, thresholds=None, units=None, JSON=None,
             decimals=None, sparkline=None, colorBackground=None, colorValue=None, absLink=None, math=""):
         """
         Parameters: this class inherits from SingleStat, and shares many optional parameters. See singlestat for details.
@@ -320,7 +324,7 @@ class MathStatPanel(SingleStatPanel):
         if colors!=None and thresholds!=None:
             thresholdMap = self._getThresholdMap(colors, thresholds)
         SingleStatPanel.__init__(self, title=title, queryArray=queryArray, valueMaps=valueMaps, rangeMaps=rangeMaps,
-                fontSize=fontSize, units=units, JSON=JSON, decimals=decimals,sparkline=sparkline, colorBackground=colorBackground, 
+                fontSize=fontSize, prefix=prefix, postfix=postfix, units=units, JSON=JSON, decimals=decimals,sparkline=sparkline, colorBackground=colorBackground, 
                 colorValue=colorValue, absLink=absLink)
         if JSON==None:
             self._buildMapDictionary(thresholdMap, math)
