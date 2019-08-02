@@ -326,6 +326,7 @@ class MathStatPanel(SingleStatPanel):
         SingleStatPanel.__init__(self, title=title, queryArray=queryArray, valueMaps=valueMaps, rangeMaps=rangeMaps,
                 fontSize=fontSize, prefix=prefix, postfix=postfix, units=units, JSON=JSON, decimals=decimals,sparkline=sparkline, colorBackground=colorBackground, 
                 colorValue=colorValue, absLink=absLink)
+        self.dictionary["tooltip"]={"show":False}
         if JSON==None:
             self._buildMapDictionary(thresholdMap, math)
 
